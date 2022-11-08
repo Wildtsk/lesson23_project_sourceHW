@@ -1,3 +1,5 @@
+from typing import Dict, Any
+
 from marshmallow import Schema, fields, validates_schema, ValidationError
 
 
@@ -9,7 +11,7 @@ class RequestParams(Schema):
     value = fields.Str(required=True)
 
     @validates_schema
-    def validate_cmd_params(self, values, *args, **kwargs):
+    def validate_cmd_params(self, values: Dict[str, str], *args: Any, **kwargs: Any) -> None:
         if values['cmd'] not in VALID_CMD:
             raise ValidationError('"cmd"')
 

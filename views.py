@@ -1,3 +1,5 @@
+from typing import Optional, Iterable
+
 from flask import Blueprint, request, jsonify
 from marshmallow import ValidationError
 
@@ -17,7 +19,7 @@ def perform_query():
         return jsonify(error.messages), 400
 
 
-    result = None
+    result = Optional[Iterable[str]] = None
     for query in params['queries']:
         result = query_builder(
             cmd=query['cmd'],
