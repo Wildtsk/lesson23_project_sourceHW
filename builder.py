@@ -1,6 +1,6 @@
 from typing import Optional, Iterable, Generator, Union, Dict, Callable, List
 
-from functions import filter_query, map_query, sort_query, unique_query, limit_query
+from functions import filter_query, map_query, sort_query, unique_query, limit_query, regex_query
 
 FILE_NAME = 'data/apache_logs.txt'
 
@@ -10,6 +10,7 @@ CMD_TO_FUNCTION: Dict[str, Callable] = {
     'unique': unique_query,
     'sort': sort_query,
     'limit': limit_query,
+    'regex': regex_query,
 }
 
 

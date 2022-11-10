@@ -3,7 +3,7 @@ from typing import Dict, Any
 from marshmallow import Schema, fields, validates_schema, ValidationError
 
 
-VALID_CMD = ('filter', 'map', 'unique', 'sort', 'limit')
+VALID_CMD = ('filter', 'map', 'unique', 'sort', 'limit', 'regex')
 
 
 class RequestParams(Schema):

@@ -24,5 +24,5 @@ def limit_query(param: str, data: Iterable[str]) -> Iterable[str]:
     return data[:limit]
 
 
-def regex_query(param: str, data: Iterable[str]) -> Iterator[str]:
+def regex_query(param: str, data: List[str]) -> Iterator[str]:
     return filter(lambda row: re.compile(rf'{str(param)}').search(row), data)
